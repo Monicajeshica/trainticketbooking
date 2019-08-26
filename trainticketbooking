@@ -1,0 +1,37 @@
+app.post('/', (req,res,next)=>{
+const response = req.body
+if(response.object === "page") {
+const messageObj = bot.getMessageObject(response)
+if (messageObj.message=='hi')
+{
+bot.getSenderProfile(response).then(function(value)
+{
+var firstname = value.first_name;
+dataChat['first_name'] = firstname;
+bot.sendText(`Hi ${firstname} apa kabar`,
+messageObj.id)
+});
+}
+{"object": "page","entry": [
+{"id": "1146485878750741",
+"time": 1531474140934,
+"messaging": [{
+"sender": {"id": "1110805859005876"},
+"recipient": {"id": "1146485878750741"},
+"timestamp": 1531474140643,
+"message":
+{"mid": "zMyGbeJHB8ieb75o3OECKRRg22kpxJe7rFT55_nWcejXlg
+0_4RatoGJRVp3M4a1rG9x8Zot10PULGzSKsxqa6w",
+"seq": 46361,
+"text": "jakarta",
+"nlp": {"entities": {
+"location": [{"suggested": true,"confidence": 0.92061,
+"value": "jakarta","type": "value"}]}}}}]}]}
+"nlp": {
+"entities": {
+"location": [
+{"suggested": true,
+"confidence": 0.90489,
+"value": "jakar",
+"type": "value"
+}]}}
